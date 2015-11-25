@@ -1,13 +1,15 @@
+var React = require('react');
+var Thumbnail = require('./thumbnail');
 
-var ThumbnailList = React.createClass({
+module.exports = React.createClass({
   render: function() {
     var list = this.props.thumbnailData.map(function(thumbanailProps){
-      return <Thumbnail {...thumbanailProps}/>;
+      return <Thumbnail {...thumbanailProps}/>
     });
 
     console.log('Inspecting the list:', list);
     return <div>
-    {list}
+      {list}
     </div>
 
   }

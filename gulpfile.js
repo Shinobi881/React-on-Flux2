@@ -7,8 +7,8 @@ var reactify = require('reactify');
 
 gulp.task('default', function() {
   var bundler = watchify(browserify({
-    entries: ['./src/app.jsx', ],
-    transform: [reactify].
+    entries: ['./src/app.jsx'],
+    transform: [reactify],
     extensions: ['.jsx'],
     debug: true,
     cache: {},
@@ -23,7 +23,7 @@ gulp.task('default', function() {
       .on('error', gutil.log.bind(gutil, 'Browserify Error'))
       .pipe(source('main.js'))
       .pipe(gulp.dest('./'));
-  };
+  }
   build();
   bundler.on('update', build);
 });
